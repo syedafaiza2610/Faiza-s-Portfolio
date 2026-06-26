@@ -158,7 +158,7 @@ export const projects = [
     icon: "book-open",
   },
   {
-    title: "Talent Showcase System",
+    title: "Skill Showcase",
     description:
       "Created a full-stack application with frontend and backend functionality to manage and display student talent with full CRUD operations. Built on the ASP.NET stack with SQL Server backend.",
     technologies: ["ASP.NET", "C#", "HTML", "CSS", "SQL Server"],
@@ -167,7 +167,7 @@ export const projects = [
     icon: "trophy",
   },
   {
-    title: "Vaccination Management System",
+    title: "Immuni Track",
     description:
       "Developed a system to manage vaccination records with efficient data handling and a user-friendly interface. Includes patient tracking, scheduling, and record management.",
     technologies: ["PHP", "MySQL"],
@@ -185,7 +185,7 @@ export const projects = [
     icon: "library",
   },
   {
-    title: "Puppy Care Website",
+    title: "Pet Care Website",
     description:
       "Developed a responsive website providing information about dog care, food, and health guidance. Features an engaging UI with smooth navigation and rich content presentation.",
     technologies: ["HTML", "CSS", "JavaScript"],
@@ -194,7 +194,7 @@ export const projects = [
     icon: "paw-print",
   },
   {
-    title: "Picnic Games",
+    title: "Kids Learning Platform",
     description:
       "Built an interactive web-based games platform for kids with engaging UI and smooth user experience. Includes multiple mini-games with score tracking and animations.",
     technologies: ["HTML", "CSS", "JavaScript"],

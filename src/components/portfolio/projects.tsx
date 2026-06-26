@@ -70,7 +70,7 @@ export function Projects() {
 
         <p className="mt-4 max-w-2xl text-zinc-400">
           A selection of full-stack and frontend applications built across the MERN stack, ASP.NET,
-          and PHP — from e-commerce platforms to library management systems.
+          and PHP from e-commerce platforms to library management systems.
         </p>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

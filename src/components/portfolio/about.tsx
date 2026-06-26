@@ -1,30 +1,68 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { GraduationCap, Briefcase, Code2, Users, Sparkles } from "lucide-react";
 import { personalInfo, stats } from "@/lib/portfolio-data";
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(value); // show final value immediately as fallback
+  const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    if (!inView) return;
-    let raf = 0;
-    const duration = 1400;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      // easeOutCubic
-      const eased = 1 - Math.pow(1 - p, 3);
-      setCount(Math.round(eased * value));
-      if (p < 1) raf = requestAnimationFrame(tick);
+    const el = ref.current;
+    if (!el) return;
+
+    // Robust IntersectionObserver works even if framer-motion's useInView fails
+    let triggered = false;
+    const startAnim = () => {
+      if (triggered) return;
+      triggered = true;
+      setStarted(true);
+      setCount(0);
+      const duration = 1400;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setCount(Math.round(eased * value));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [inView, value]);
+
+    // Use native IntersectionObserver
+    if (typeof IntersectionObserver !== "undefined") {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startAnim();
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.3, rootMargin: "0px 0px -50px 0px" }
+      );
+      observer.observe(el);
+
+      // Fallback: if not triggered within 2.5s, just show final value
+      const fallback = setTimeout(() => {
+        if (!triggered) {
+          setCount(value);
+        }
+      }, 2500);
+
+      return () => {
+        observer.disconnect();
+        clearTimeout(fallback);
+      };
+    } else {
+      // No IntersectionObserver support just show final value
+      setCount(value);
+    }
+  }, [value]);
 
   return (
     <span ref={ref}>
@@ -77,16 +115,19 @@ export function About() {
               Currently serving as{" "}
               <span className="text-fuchsia-300 font-medium">Manager Academics</span> at Aptech
               North Karachi, I lead a team of faculty members while continuing to build and ship
-              full-stack applications. My journey spans the{" "}
+              full-stack applications. Previously I served as{" "}
+              <span className="text-violet-300 font-medium">Developer Lead & IT Instructor</span>,
+              where I mentored 100+ students, led 15+ full-stack projects from concept to deployment,
+              and architected curriculum across 4 batches. My journey spans the{" "}
               <span className="text-violet-300 font-medium">MERN stack</span>,{" "}
               <span className="text-violet-300 font-medium">ASP.NET / C#</span>, and{" "}
-              <span className="text-violet-300 font-medium">PHP / MySQL</span> — with hands-on
-              experience designing REST APIs, integrating databases, and mentoring students on
-              real-world projects.
+              <span className="text-violet-300 font-medium">PHP / MySQL</span> with hands-on
+              experience designing REST APIs, integrating databases, and mentoring the next
+              generation of developers.
             </p>
             <p className="text-base text-zinc-400 leading-relaxed">
               I care deeply about clean architecture, intuitive UX, and continuous learning. I&apos;m
-              especially excited about leveraging AI tools to ship faster, smarter solutions — and
+              especially excited about leveraging AI tools to ship faster, smarter solutions and
               helping others do the same.
             </p>
 

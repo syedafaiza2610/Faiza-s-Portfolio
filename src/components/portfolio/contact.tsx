@@ -15,7 +15,7 @@ import { personalInfo } from "@/lib/portfolio-data";
 import { useState } from "react";
 import { toast } from "sonner";
 
-// Simple toast import shim — use shadcn toaster if available
+// Simple toast import shim use shadcn toaster if available
 function showToast(message: string) {
   try {
     toast.success(message);
@@ -32,7 +32,7 @@ export function Contact() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    // Simulate sending — open mail client
+    // Simulate sending open mail client
     setTimeout(() => {
       const subject = encodeURIComponent(`Portfolio inquiry from ${form.name || "Recruiter"}`);
       const body = encodeURIComponent(
@@ -101,7 +101,7 @@ export function Contact() {
 
         <p className="mt-4 max-w-2xl text-zinc-400">
           I&apos;m currently open to Full Stack Developer roles and freelance projects. Whether you
-          have a question, an opportunity, or just want to say hi — drop a message and I&apos;ll
+          have a question, an opportunity, or just want to say hi drop a message and I&apos;ll
           get back to you.
         </p>
 

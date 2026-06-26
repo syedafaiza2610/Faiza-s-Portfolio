@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "db:push": "echo 'db:push skipped'",
+    "db:generate": "echo 'db:generate skipped'",
+    "db:migrate": "echo 'db:migrate skipped'",
+    "db:reset": "echo 'db:reset skipped'"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

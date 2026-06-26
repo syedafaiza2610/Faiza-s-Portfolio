@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Faiza Parveen — Full Stack Developer Portfolio",
+  title: "Faiza Parveen Full Stack Developer Portfolio",
   description:
     "Portfolio of Faiza Parveen, a results-driven Junior Full Stack Developer skilled in .NET, PHP, JavaScript, MERN stack, and database systems. Building scalable web applications and mentoring the next generation.",
   keywords: [
@@ -30,8 +30,13 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   authors: [{ name: "Faiza Parveen" }],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
-    title: "Faiza Parveen — Full Stack Developer",
+    title: "Faiza Parveen Full Stack Developer",
     description:
       "Results-driven Junior Full Stack Developer building scalable web applications with .NET, PHP, JavaScript & MERN stack.",
     type: "website",
@@ -47,6 +52,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        suppressHydrationWarning
       >
         {children}
         <Toaster />

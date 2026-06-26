@@ -1,4 +1,4 @@
-# Faiza Parveen — 3D Portfolio
+# Faiza Parveen 3D Portfolio
 
 A premium, animated, 3D-enhanced portfolio website built for Faiza Parveen (Junior Full Stack Developer).
 
@@ -87,11 +87,11 @@ The color palette is defined as CSS variables in **`src/app/globals.css`** under
 
 ### Adjust 3D Scene
 The hero 3D scene is in **`src/components/portfolio/hero-3d.tsx`**:
-- `Knot()` — the central torus knot (color, emissive, scale)
-- `FloatingShape` — the orbiting geometric shapes
-- `OrbitingDots` — the trail dots
-- `Sparkles` — particle count and opacity
-- Point lights — intensity and color
+- `Knot()` the central torus knot (color, emissive, scale)
+- `FloatingShape` the orbiting geometric shapes
+- `OrbitingDots` the trail dots
+- `Sparkles` particle count and opacity
+- Point lights intensity and color
 
 ### Lighten/Dim 3D
 To make the 3D even more subtle, reduce `emissiveIntensity` values and point light `intensity` values in `hero-3d.tsx`. To make it brighter, increase them.
@@ -118,7 +118,7 @@ To make the 3D even more subtle, reduce `emissiveIntensity` values and point lig
 The easiest way to deploy is via [Vercel](https://vercel.com):
 1. Push this folder to a GitHub repo
 2. Import the repo into Vercel
-3. Deploy — no env vars required
+3. Deploy no env vars required
 
 ## License
 

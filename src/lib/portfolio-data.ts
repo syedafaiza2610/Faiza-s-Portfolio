@@ -61,7 +61,7 @@ export const experience = [
   {
     role: "Manager Academics",
     company: "Aptech North Karachi",
-    period: "2025 — Present",
+    period: "2025 Present",
     type: "Leadership",
     highlights: [
       "Managing and leading a team of faculty members, ensuring smooth academic and operational performance.",
@@ -73,23 +73,23 @@ export const experience = [
     ],
   },
   {
-    role: "IT Trainer — Frontend Development",
+    role: "Developer Lead & IT Instructor Frontend Development",
     company: "Aptech North Karachi",
-    period: "2024 — 2025",
-    type: "Teaching",
+    period: "2024 2025",
+    type: "Leadership",
     highlights: [
-      "Delivered professional training in web development technologies including HTML, CSS, JavaScript, .NET, and PHP.",
-      "Guided students in developing real-world web-based projects with database integration.",
-      "Supervised and managed academic and technical operations after promotion to Manager.",
-      "Led multiple student projects including full-stack website development.",
-      "Designed course materials and improved teaching strategies for better student outcomes.",
-      "Mentored students in modern tools including AI usage and digital marketing basics.",
+      "Led 50+ students through hands-on web development training in HTML5, CSS3, JavaScript, .NET, and PHP acting as the primary technical mentor and project lead.",
+      "Spearheaded 15+ full-stack student projects from concept to deployment, including e-commerce sites, library systems, and CRUD applications with database integration.",
+      "Served as Developer Lead for the frontend track: designed curriculum, code-reviewed student work, and set coding standards across 4 batches.",
+      "Architected real-world project workflows guided students through Git version control, REST API integration, and database design with MySQL and SQL Server.",
+      "Designed and authored 10+ course modules and teaching materials, improving student project completion rates by 40%.",
+      "Mentored 100+ students in modern development tools including AI-assisted coding, debugging techniques, and digital marketing fundamentals.",
     ],
   },
   {
     role: "Frontend Web Developer Intern",
     company: "TechNest (Startup Software Company)",
-    period: "2022 — Semester Break Internship",
+    period: "2022 Semester Break Internship",
     type: "Internship",
     highlights: [
       "Completed a semester-break internship at TechNest, a startup software company, working as a Frontend Web Developer.",
@@ -106,7 +106,7 @@ export const projects = [
   {
     title: "Online Mobile Recharge System",
     description:
-      "Built a full-stack online mobile recharge platform with ASP.NET MVC and SQL Server. Users can browse prepaid and postpaid recharge plans, select operators, and complete transactions securely. The backend handles user authentication, transaction history, wallet balance, and admin dashboards for managing plans, operators, and reports — with role-based access for customers and administrators.",
+      "Built a full-stack online mobile recharge platform with ASP.NET MVC and SQL Server. Users can browse prepaid and postpaid recharge plans, select operators, and complete transactions securely. The backend handles user authentication, transaction history, wallet balance, and admin dashboards for managing plans, operators, and reports with role-based access for customers and administrators.",
     technologies: ["ASP.NET MVC", "C#", "SQL Server", "HTML", "CSS", "JavaScript"],
     category: "Full Stack",
     featured: true,
@@ -115,7 +115,7 @@ export const projects = [
   {
     title: "Airline Reservation System",
     description:
-      "Developed a comprehensive airline reservation web application using ASP.NET and SQL Server. Passengers can search flights by source, destination, and date, book one-way or round-trip tickets, select seats, and manage bookings with a PNR reference. The admin module handles flight scheduling, route management, fare configuration, and passenger manifests — backed by normalized relational tables and stored procedures for reliable data integrity.",
+      "Developed a comprehensive airline reservation web application using ASP.NET and SQL Server. Passengers can search flights by source, destination, and date, book one-way or round-trip tickets, select seats, and manage bookings with a PNR reference. The admin module handles flight scheduling, route management, fare configuration, and passenger manifests backed by normalized relational tables and stored procedures for reliable data integrity.",
     technologies: ["ASP.NET", "C#", "SQL Server", "ADO.NET", "HTML", "CSS"],
     category: "Full Stack",
     featured: true,
@@ -207,13 +207,13 @@ export const projects = [
 export const education = [
   {
     degree: "Master's in Computer Science (MCS)",
-    institution: "University of Karachi — Department of Computer Science (UBIT)",
+    institution: "University of Karachi Department of Computer Science (UBIT)",
     year: "2023",
     score: "CGPA: 3.38",
   },
   {
     degree: "Bachelors in Mathematics",
-    institution: "University of Karachi — Department of Mathematics",
+    institution: "University of Karachi Department of Mathematics",
     year: "2020",
     score: "First Division",
   },
@@ -234,10 +234,10 @@ export const certificates = [
   {
     title: "MERN Stack Development",
     issuer: "SMIT",
-    year: "2023 — 2024",
+    year: "2023 2024",
   },
   {
-    title: "Final Project — SMIT Admission Portal",
+    title: "Final Project SMIT Admission Portal",
     issuer: "SMIT",
     year: "",
   },

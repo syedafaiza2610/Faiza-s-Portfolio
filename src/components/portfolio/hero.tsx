@@ -16,12 +16,12 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-28 pb-16"
     >
-      {/* 3D scene layer — confined to the right half on desktop so it never sits behind the intro text */}
+      {/* 3D scene layer confined to the right half on desktop so it never sits behind the intro text */}
       <div className="absolute inset-0 z-0 hero-scene-wrap">
         <Hero3DScene />
       </div>
 
-      {/* Readability gradient overlay — darkens only the left side where the intro sits */}
+      {/* Readability gradient overlay darkens only the left side where the intro sits */}
       <div
         aria-hidden
         className="absolute inset-0 z-[1] pointer-events-none hero-readability-overlay"

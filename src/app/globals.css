@@ -44,7 +44,7 @@
 }
 
 /* ============================================================
-   PORTFOLIO CUSTOM THEME — Dark, premium, magenta/violet/amber
+   PORTFOLIO CUSTOM THEME Dark, premium, magenta/violet/amber
    ============================================================ */
 :root {
   --radius: 0.75rem;
@@ -263,12 +263,14 @@
 }
 
 /* ============================================================
-   Hero readability — keep 3D scene out from behind the intro text
+   Hero readability keep 3D scene out from behind the intro text
    ============================================================ */
 /* Confine the 3D canvas to the right half on desktop, fade on mobile */
 .hero-scene-wrap {
   /* On mobile: keep a faint scene so the hero isn't empty */
   opacity: 0.55;
+  /* CRITICAL: disable pointer events so the 3D canvas never blocks navbar taps / scrolling on mobile */
+  pointer-events: none;
   /* Soft fade so the scene melts into the page edges instead of ending hard */
   -webkit-mask-image: radial-gradient(ellipse 70% 80% at 75% 50%, #000 35%, transparent 80%);
   mask-image: radial-gradient(ellipse 70% 80% at 75% 50%, #000 35%, transparent 80%);

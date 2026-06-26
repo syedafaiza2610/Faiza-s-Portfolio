@@ -13,7 +13,6 @@ export function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
-      // active section detection
       const sections = navItems.map((n) => n.href.slice(1));
       const current = sections.find((id) => {
         const el = document.getElementById(id);
@@ -26,6 +25,15 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   return (
@@ -106,12 +114,12 @@ export function Navbar() {
         {/* Mobile menu */}
         <AnimatePresence>
           {open && (
-            <motion.nav
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25 }}
-              className="md:hidden mt-2 overflow-hidden"
+            <motion.div
+              initial={{ opacity: 0, y: -8, scaleY: 0.95 }}
+              animate={{ opacity: 1, y: 0, scaleY: 1 }}
+              exit={{ opacity: 0, y: -8, scaleY: 0.95 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="md:hidden mt-2 origin-top"
             >
               <div className="glass-strong rounded-2xl p-3 flex flex-col gap-1">
                 {navItems.map((item) => (
@@ -119,7 +127,7 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                    className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
                       active === item.href
                         ? "bg-fuchsia-500/15 text-white"
                         : "text-zinc-300 hover:bg-white/5"
@@ -131,12 +139,12 @@ export function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-fuchsia-500 to-violet-500 px-4 py-2.5 text-sm font-semibold text-white"
+                  className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-fuchsia-500 to-violet-500 px-4 py-3 text-sm font-semibold text-white"
                 >
                   <Sparkles className="h-3.5 w-3.5" /> Hire Me
                 </a>
               </div>
-            </motion.nav>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>

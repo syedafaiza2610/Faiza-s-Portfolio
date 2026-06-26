@@ -19,7 +19,7 @@ const categoryMeta: Record<
   Marketing: { icon: Palette, color: "text-amber-300", ring: "ring-amber-500/30 bg-amber-500/10" },
 };
 
-// Marquee strip — duplicate list for seamless loop
+// Marquee strip duplicate list for seamless loop
 const marqueeSkills = [...technicalSkills, ...technicalSkills];
 
 export function Skills() {

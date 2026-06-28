@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, Download } from "lucide-react";
 import { navItems, personalInfo } from "@/lib/portfolio-data";
 
 export function Navbar() {
@@ -13,6 +13,7 @@ export function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 24);
+      // active section detection
       const sections = navItems.map((n) => n.href.slice(1));
       const current = sections.find((id) => {
         const el = document.getElementById(id);
@@ -27,15 +28,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close menu on resize to desktop
-  useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth >= 768) setOpen(false);
-    };
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
   return (
     <motion.header
       initial={{ y: -80, opacity: 0 }}
@@ -48,21 +40,20 @@ export function Navbar() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div
           className={`flex items-center justify-between rounded-2xl px-4 sm:px-6 py-3 transition-all duration-500 ${
-            scrolled ? "glass-strong shadow-2xl shadow-fuchsia-500/10" : ""
+            scrolled ? "glass-strong shadow-2xl shadow-emerald-500/10" : ""
           }`}
         >
           {/* Logo */}
           <a href="#home" className="group flex items-center gap-2.5">
-            <div className="relative grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-fuchsia-500 via-pink-500 to-violet-500 text-sm font-bold text-white shadow-lg shadow-fuchsia-500/30">
+            <div className="relative grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 text-sm font-bold text-white shadow-lg shadow-emerald-500/30">
               FP
-              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-amber-400 pulse-dot text-amber-400" />
             </div>
             <div className="hidden sm:flex flex-col leading-tight">
               <span className="text-sm font-semibold tracking-tight text-white">
-                {personalInfo.name}
+                Faiza <span className="text-emerald-300">Parveen</span>
               </span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-fuchsia-300/70">
-                Full Stack Dev
+              <span className="text-[10px] uppercase tracking-[0.2em] text-amber-300/80">
+                Full Stack Developer
               </span>
             </div>
           </a>
@@ -82,7 +73,7 @@ export function Navbar() {
                 {active === item.href && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute inset-0 rounded-lg bg-fuchsia-500/10 ring-1 ring-fuchsia-500/30"
+                    className="absolute inset-0 rounded-lg bg-emerald-500/10 ring-1 ring-emerald-500/30"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -93,10 +84,18 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <a
-              href="#contact"
-              className="hidden md:inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-fuchsia-500 to-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-fuchsia-500/30 transition-all hover:shadow-fuchsia-500/50 hover:scale-105"
+              href="/Faiza-Parveen-Resume.pdf"
+              download="Faiza-Parveen-Resume.pdf"
+              className="btn-primary hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-sm"
             >
-              <Sparkles className="h-3.5 w-3.5" />
+              <Download className="h-3.5 w-3.5" />
+              Resume
+            </a>
+            <a
+              href="#contact"
+              className="btn-secondary hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-sm"
+            >
+              <Sparkles className="h-3.5 w-3.5 text-amber-400" />
               Hire Me
             </a>
 
@@ -114,12 +113,12 @@ export function Navbar() {
         {/* Mobile menu */}
         <AnimatePresence>
           {open && (
-            <motion.div
-              initial={{ opacity: 0, y: -8, scaleY: 0.95 }}
-              animate={{ opacity: 1, y: 0, scaleY: 1 }}
-              exit={{ opacity: 0, y: -8, scaleY: 0.95 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="md:hidden mt-2 origin-top"
+            <motion.nav
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25 }}
+              className="md:hidden mt-2 overflow-hidden"
             >
               <div className="glass-strong rounded-2xl p-3 flex flex-col gap-1">
                 {navItems.map((item) => (
@@ -127,9 +126,9 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
+                    className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
                       active === item.href
-                        ? "bg-fuchsia-500/15 text-white"
+                        ? "bg-emerald-500/15 text-white"
                         : "text-zinc-300 hover:bg-white/5"
                     }`}
                   >
@@ -137,14 +136,22 @@ export function Navbar() {
                   </a>
                 ))}
                 <a
+                  href="/Faiza-Parveen-Resume.pdf"
+                  download="Faiza-Parveen-Resume.pdf"
+                  onClick={() => setOpen(false)}
+                  className="btn-primary inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm"
+                >
+                  <Download className="h-3.5 w-3.5" /> Download Resume
+                </a>
+                <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="mt-1 inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-r from-fuchsia-500 to-violet-500 px-4 py-3 text-sm font-semibold text-white"
+                  className="btn-secondary inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm"
                 >
-                  <Sparkles className="h-3.5 w-3.5" /> Hire Me
+                  <Sparkles className="h-3.5 w-3.5 text-amber-400" /> Hire Me
                 </a>
               </div>
-            </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
       </div>

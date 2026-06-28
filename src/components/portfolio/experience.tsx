@@ -31,7 +31,7 @@ export function Experience() {
 
         <div className="mt-14 relative">
           {/* Vertical line */}
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-fuchsia-500/60 via-violet-500/30 to-transparent sm:-translate-x-1/2" />
+          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/60 via-teal-500/30 to-transparent sm:-translate-x-1/2" />
 
           <div className="space-y-12">
             {experience.map((job, i) => {
@@ -49,9 +49,9 @@ export function Experience() {
                 >
                   {/* Node */}
                   <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 z-10">
-                    <div className="relative grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-500 ring-4 ring-[#07060d]">
+                    <div className="relative grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 ring-4 ring-[#07060d]">
                       <Briefcase className="h-3.5 w-3.5 text-white" />
-                      <span className="absolute inset-0 rounded-full bg-fuchsia-500/40 animate-ping" />
+                      <span className="absolute inset-0 rounded-full bg-emerald-500/40 animate-ping" />
                     </div>
                   </div>
 
@@ -70,14 +70,14 @@ export function Experience() {
                       }`}
                     >
                       <div
-                        className={`flex items-center gap-2 text-xs text-fuchsia-300 mb-3 ${
+                        className={`flex items-center gap-2 text-xs text-emerald-300 mb-3 ${
                           isLeft ? "sm:justify-end" : ""
                         }`}
                       >
                         <Calendar className="h-3.5 w-3.5" />
                         {job.period}
                         <span className="mx-1 text-zinc-600">·</span>
-                        <span className="rounded-full bg-fuchsia-500/10 px-2 py-0.5 ring-1 ring-fuchsia-500/30 text-[10px] uppercase tracking-wider">
+                        <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 ring-1 ring-emerald-500/30 text-[10px] uppercase tracking-wider">
                           {job.type}
                         </span>
                       </div>
@@ -88,7 +88,7 @@ export function Experience() {
                           isLeft ? "sm:justify-end" : ""
                         }`}
                       >
-                        <Building2 className="h-3.5 w-3.5 text-violet-300" />
+                        <Building2 className="h-3.5 w-3.5 text-teal-300" />
                         {job.company}
                       </div>
 
@@ -104,7 +104,7 @@ export function Experience() {
                               isLeft ? "sm:flex-row-reverse" : ""
                             }`}
                           >
-                            <ChevronRight className="h-4 w-4 mt-0.5 shrink-0 text-fuchsia-400" />
+                            <ChevronRight className="h-4 w-4 mt-0.5 shrink-0 text-emerald-400" />
                             <span>{h}</span>
                           </li>
                         ))}

@@ -8,18 +8,18 @@ const categoryMeta: Record<
   string,
   { icon: typeof Cpu; color: string; ring: string }
 > = {
-  Frontend: { icon: Layers, color: "text-fuchsia-300", ring: "ring-fuchsia-500/30 bg-fuchsia-500/10" },
-  Backend: { icon: Server, color: "text-violet-300", ring: "ring-violet-500/30 bg-violet-500/10" },
-  Database: { icon: Database, color: "text-pink-300", ring: "ring-pink-500/30 bg-pink-500/10" },
+  Frontend: { icon: Layers, color: "text-emerald-300", ring: "ring-emerald-500/30 bg-emerald-500/10" },
+  Backend: { icon: Server, color: "text-teal-300", ring: "ring-teal-500/30 bg-teal-500/10" },
+  Database: { icon: Database, color: "text-amber-300", ring: "ring-amber-500/30 bg-amber-500/10" },
   Architecture: { icon: Cpu, color: "text-amber-300", ring: "ring-amber-500/30 bg-amber-500/10" },
   Tools: { icon: Wrench, color: "text-cyan-300", ring: "ring-cyan-500/30 bg-cyan-500/10" },
   Design: { icon: Palette, color: "text-rose-300", ring: "ring-rose-500/30 bg-rose-500/10" },
   CMS: { icon: Cloud, color: "text-emerald-300", ring: "ring-emerald-500/30 bg-emerald-500/10" },
-  AI: { icon: Sparkles, color: "text-fuchsia-300", ring: "ring-fuchsia-500/30 bg-fuchsia-500/10" },
+  AI: { icon: Sparkles, color: "text-emerald-300", ring: "ring-emerald-500/30 bg-emerald-500/10" },
   Marketing: { icon: Palette, color: "text-amber-300", ring: "ring-amber-500/30 bg-amber-500/10" },
 };
 
-// Marquee strip duplicate list for seamless loop
+// Marquee strip — duplicate list for seamless loop
 const marqueeSkills = [...technicalSkills, ...technicalSkills];
 
 export function Skills() {
@@ -102,7 +102,7 @@ export function Skills() {
                           whileInView={{ width: `${s.level}%` }}
                           viewport={{ once: true, margin: "-50px" }}
                           transition={{ duration: 1, ease: "easeOut" }}
-                          className="h-full rounded-full bg-gradient-to-r from-fuchsia-500 via-pink-500 to-violet-500"
+                          className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-amber-500 to-teal-500"
                         />
                       </div>
                     </div>
@@ -122,7 +122,7 @@ export function Skills() {
           className="mt-14"
         >
           <div className="flex items-center gap-2 mb-5">
-            <Sparkles className="h-4 w-4 text-fuchsia-300" />
+            <Sparkles className="h-4 w-4 text-emerald-300" />
             <h3 className="text-lg font-semibold text-white">Soft Skills</h3>
           </div>
           <div className="flex flex-wrap gap-2.5">
@@ -134,9 +134,9 @@ export function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.04 }}
                 whileHover={{ scale: 1.05 }}
-                className="inline-flex items-center gap-1.5 rounded-full border border-fuchsia-500/20 bg-fuchsia-500/5 px-4 py-2 text-sm font-medium text-fuchsia-100 hover:border-fuchsia-500/40 hover:bg-fuchsia-500/10 transition-colors cursor-default"
+                className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-2 text-sm font-medium text-emerald-100 hover:border-emerald-500/40 hover:bg-emerald-500/10 transition-colors cursor-default"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 {s}
               </motion.span>
             ))}

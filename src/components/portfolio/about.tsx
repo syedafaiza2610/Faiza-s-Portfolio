@@ -14,7 +14,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
     const el = ref.current;
     if (!el) return;
 
-    // Robust IntersectionObserver works even if framer-motion's useInView fails
+    // Robust IntersectionObserver — works even if framer-motion's useInView fails
     let triggered = false;
     const startAnim = () => {
       if (triggered) return;
@@ -59,7 +59,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
         clearTimeout(fallback);
       };
     } else {
-      // No IntersectionObserver support just show final value
+      // No IntersectionObserver support — just show final value
       setCount(value);
     }
   }, [value]);
@@ -113,21 +113,21 @@ export function About() {
             </p>
             <p className="text-base text-zinc-400 leading-relaxed">
               Currently serving as{" "}
-              <span className="text-fuchsia-300 font-medium">Manager Academics</span> at Aptech
+              <span className="text-emerald-300 font-medium">Manager Academics</span> at Aptech
               North Karachi, I lead a team of faculty members while continuing to build and ship
               full-stack applications. Previously I served as{" "}
-              <span className="text-violet-300 font-medium">Developer Lead & IT Instructor</span>,
+              <span className="text-teal-300 font-medium">Developer Lead & IT Instructor</span>,
               where I mentored 100+ students, led 15+ full-stack projects from concept to deployment,
               and architected curriculum across 4 batches. My journey spans the{" "}
-              <span className="text-violet-300 font-medium">MERN stack</span>,{" "}
-              <span className="text-violet-300 font-medium">ASP.NET / C#</span>, and{" "}
-              <span className="text-violet-300 font-medium">PHP / MySQL</span> with hands-on
+              <span className="text-teal-300 font-medium">MERN stack</span>,{" "}
+              <span className="text-teal-300 font-medium">ASP.NET / C#</span>, and{" "}
+              <span className="text-teal-300 font-medium">PHP / MySQL</span> — with hands-on
               experience designing REST APIs, integrating databases, and mentoring the next
               generation of developers.
             </p>
             <p className="text-base text-zinc-400 leading-relaxed">
               I care deeply about clean architecture, intuitive UX, and continuous learning. I&apos;m
-              especially excited about leveraging AI tools to ship faster, smarter solutions and
+              especially excited about leveraging AI tools to ship faster, smarter solutions — and
               helping others do the same.
             </p>
 
@@ -144,7 +144,7 @@ export function About() {
                   className="glass rounded-xl px-4 py-3 flex items-center justify-between"
                 >
                   <span className="text-xs uppercase tracking-wider text-zinc-500">{f.k}</span>
-                  <span className="text-sm font-medium text-fuchsia-200">{f.v}</span>
+                  <span className="text-sm font-medium text-emerald-200">{f.v}</span>
                 </div>
               ))}
             </div>
@@ -165,7 +165,7 @@ export function About() {
                   key={s.label}
                   className="border-gradient card-lift p-5 group"
                 >
-                  <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-fuchsia-500/10 ring-1 ring-fuchsia-500/30 text-fuchsia-300">
+                  <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-emerald-500/10 ring-1 ring-emerald-500/30 text-emerald-300">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="text-3xl font-bold text-white">

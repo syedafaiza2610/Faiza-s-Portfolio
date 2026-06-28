@@ -15,7 +15,7 @@ import { personalInfo } from "@/lib/portfolio-data";
 import { useState } from "react";
 import { toast } from "sonner";
 
-// Simple toast import shim use shadcn toaster if available
+// Simple toast import shim — use shadcn toaster if available
 function showToast(message: string) {
   try {
     toast.success(message);
@@ -32,7 +32,7 @@ export function Contact() {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    // Simulate sending open mail client
+    // Simulate sending — open mail client
     setTimeout(() => {
       const subject = encodeURIComponent(`Portfolio inquiry from ${form.name || "Recruiter"}`);
       const body = encodeURIComponent(
@@ -50,28 +50,28 @@ export function Contact() {
       label: "Email",
       value: personalInfo.email,
       href: `mailto:${personalInfo.email}`,
-      color: "from-fuchsia-500 to-pink-500",
+      color: "from-emerald-500 to-amber-500",
     },
     {
       icon: Phone,
       label: "Phone",
       value: personalInfo.phone,
       href: `tel:${personalInfo.phone.replace(/\s/g, "")}`,
-      color: "from-violet-500 to-fuchsia-500",
+      color: "from-teal-500 to-emerald-500",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "syeda-faiza",
       href: personalInfo.linkedin,
-      color: "from-pink-500 to-rose-500",
+      color: "from-amber-500 to-rose-500",
     },
     {
       icon: Github,
       label: "GitHub",
       value: "syedafaiza2610",
       href: personalInfo.github,
-      color: "from-amber-500 to-fuchsia-500",
+      color: "from-amber-500 to-emerald-500",
     },
   ];
 
@@ -101,7 +101,7 @@ export function Contact() {
 
         <p className="mt-4 max-w-2xl text-zinc-400">
           I&apos;m currently open to Full Stack Developer roles and freelance projects. Whether you
-          have a question, an opportunity, or just want to say hi drop a message and I&apos;ll
+          have a question, an opportunity, or just want to say hi — drop a message and I&apos;ll
           get back to you.
         </p>
 
@@ -131,7 +131,7 @@ export function Contact() {
                   </div>
                   <div className="text-sm font-medium text-white truncate">{c.value}</div>
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-zinc-500 transition-all group-hover:text-fuchsia-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="h-4 w-4 text-zinc-500 transition-all group-hover:text-emerald-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </motion.a>
             ))}
 
@@ -172,7 +172,7 @@ export function Contact() {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Jane Recruiter"
-                    className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-fuchsia-500/50 focus:ring-2 focus:ring-fuchsia-500/20 transition-all"
+                    className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20 transition-all"
                   />
                 </div>
                 <div>
@@ -185,7 +185,7 @@ export function Contact() {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="jane@company.com"
-                    className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-fuchsia-500/50 focus:ring-2 focus:ring-fuchsia-500/20 transition-all"
+                    className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20 transition-all"
                   />
                 </div>
               </div>
@@ -199,13 +199,13 @@ export function Contact() {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Hi Faiza, we have an exciting opportunity…"
-                  className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-fuchsia-500/50 focus:ring-2 focus:ring-fuchsia-500/20 transition-all resize-none"
+                  className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/20 transition-all resize-none"
                 />
               </div>
               <button
                 type="submit"
                 disabled={sending}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-fuchsia-500 via-pink-500 to-violet-500 px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-fuchsia-500/30 transition-all hover:shadow-fuchsia-500/50 hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed"
+                className="btn-primary group inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 text-sm disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {sending ? (
                   <>

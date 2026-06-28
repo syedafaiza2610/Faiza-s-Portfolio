@@ -61,7 +61,7 @@ export const experience = [
   {
     role: "Manager Academics",
     company: "Aptech North Karachi",
-    period: "2025 Present",
+    period: "2025 — Present",
     type: "Leadership",
     highlights: [
       "Managing and leading a team of faculty members, ensuring smooth academic and operational performance.",
@@ -73,15 +73,15 @@ export const experience = [
     ],
   },
   {
-    role: "Developer Lead & IT Instructor Frontend Development",
+    role: "Developer Lead & IT Instructor — Frontend Development",
     company: "Aptech North Karachi",
-    period: "2024 2025",
+    period: "2024 — 2025",
     type: "Leadership",
     highlights: [
-      "Led 50+ students through hands-on web development training in HTML5, CSS3, JavaScript, .NET, and PHP acting as the primary technical mentor and project lead.",
+      "Led 50+ students through hands-on web development training in HTML5, CSS3, JavaScript, .NET, and PHP — acting as the primary technical mentor and project lead.",
       "Spearheaded 15+ full-stack student projects from concept to deployment, including e-commerce sites, library systems, and CRUD applications with database integration.",
       "Served as Developer Lead for the frontend track: designed curriculum, code-reviewed student work, and set coding standards across 4 batches.",
-      "Architected real-world project workflows guided students through Git version control, REST API integration, and database design with MySQL and SQL Server.",
+      "Architected real-world project workflows — guided students through Git version control, REST API integration, and database design with MySQL and SQL Server.",
       "Designed and authored 10+ course modules and teaching materials, improving student project completion rates by 40%.",
       "Mentored 100+ students in modern development tools including AI-assisted coding, debugging techniques, and digital marketing fundamentals.",
     ],
@@ -89,7 +89,7 @@ export const experience = [
   {
     role: "Frontend Web Developer Intern",
     company: "TechNest (Startup Software Company)",
-    period: "2022 Semester Break Internship",
+    period: "2022 — Semester Break Internship",
     type: "Internship",
     highlights: [
       "Completed a semester-break internship at TechNest, a startup software company, working as a Frontend Web Developer.",
@@ -106,20 +106,22 @@ export const projects = [
   {
     title: "Online Mobile Recharge System",
     description:
-      "Built a full-stack online mobile recharge platform with ASP.NET MVC and SQL Server. Users can browse prepaid and postpaid recharge plans, select operators, and complete transactions securely. The backend handles user authentication, transaction history, wallet balance, and admin dashboards for managing plans, operators, and reports with role-based access for customers and administrators.",
+      "Built a full-stack online mobile recharge platform with ASP.NET MVC and SQL Server. Users can browse prepaid and postpaid recharge plans, select operators, and complete transactions securely. The backend handles user authentication, transaction history, wallet balance, and admin dashboards for managing plans, operators, and reports — with role-based access for customers and administrators.",
     technologies: ["ASP.NET MVC", "C#", "SQL Server", "HTML", "CSS", "JavaScript"],
     category: "Full Stack",
     featured: true,
     icon: "smartphone",
+    liveLink: "https://mobile-recharge.faiza-parveen.dev",
   },
   {
     title: "Airline Reservation System",
     description:
-      "Developed a comprehensive airline reservation web application using ASP.NET and SQL Server. Passengers can search flights by source, destination, and date, book one-way or round-trip tickets, select seats, and manage bookings with a PNR reference. The admin module handles flight scheduling, route management, fare configuration, and passenger manifests backed by normalized relational tables and stored procedures for reliable data integrity.",
+      "Developed a comprehensive airline reservation web application using ASP.NET and SQL Server. Passengers can search flights by source, destination, and date, book one-way or round-trip tickets, select seats, and manage bookings with a PNR reference. The admin module handles flight scheduling, route management, fare configuration, and passenger manifests — backed by normalized relational tables and stored procedures for reliable data integrity.",
     technologies: ["ASP.NET", "C#", "SQL Server", "ADO.NET", "HTML", "CSS"],
     category: "Full Stack",
     featured: true,
     icon: "plane",
+    liveLink: "https://airline-reservation.faiza-parveen.dev",
   },
   {
     title: "Fitness Management System",
@@ -129,6 +131,7 @@ export const projects = [
     category: "Full Stack",
     featured: true,
     icon: "dumbbell",
+    liveLink: "https://fitness-mern.faiza-parveen.dev",
   },
   {
     title: "Hotel Management System",
@@ -138,15 +141,17 @@ export const projects = [
     category: "Full Stack",
     featured: true,
     icon: "bed-double",
+    liveLink: "https://hotel-mern.faiza-parveen.dev",
   },
   {
-    title: "E-commerce Web Application",
-    description:
-      "Developed a scalable e-commerce platform with product listing, user authentication, and backend API integration. The system supports dynamic product management, secure user sessions, and a responsive shopping experience.",
-    technologies: ["MongoDB", "Express.js", "React", "Node.js"],
-    category: "Full Stack",
-    featured: true,
-    icon: "shopping-cart",
+  title: "Saylani Student Portal (Final Hackathon Project)",
+description:
+  "Developed a scalable student portal during the Saylani Final Hackathon to simplify access to student services and academic resources. The platform includes secure user authentication, responsive dashboards, backend API integration, and efficient data management to provide a seamless experience for students.",
+technologies: ["MongoDB", "Express.js", "React", "Node.js"],
+category: "Full Stack",
+featured: true,
+icon: "graduation-cap",
+    liveLink: "https://student-portal-fa.vercel.app/",
   },
   {
     title: "MERN Stack Library Application",
@@ -156,24 +161,27 @@ export const projects = [
     category: "Full Stack",
     featured: true,
     icon: "book-open",
+    liveLink: "https://library-mern.faiza-parveen.dev",
   },
   {
-    title: "Skill Showcase",
+    title: "Talent Showcase System",
     description:
       "Created a full-stack application with frontend and backend functionality to manage and display student talent with full CRUD operations. Built on the ASP.NET stack with SQL Server backend.",
     technologies: ["ASP.NET", "C#", "HTML", "CSS", "SQL Server"],
     category: "Full Stack",
     featured: true,
     icon: "trophy",
+    liveLink: "https://talent-showcase.faiza-parveen.dev",
   },
   {
-    title: "Immuni Track",
+    title: "Vaccination Management System",
     description:
       "Developed a system to manage vaccination records with efficient data handling and a user-friendly interface. Includes patient tracking, scheduling, and record management.",
     technologies: ["PHP", "MySQL"],
     category: "Web App",
     featured: false,
     icon: "syringe",
+    liveLink: "https://vaccination.faiza-parveen.dev",
   },
   {
     title: "Book Library Management System",
@@ -183,37 +191,40 @@ export const projects = [
     category: "Web App",
     featured: false,
     icon: "library",
+    liveLink: "https://smit-ba688.web.app/",
   },
   {
-    title: "Pet Care Website",
+    title: "Puppy Care Website",
     description:
       "Developed a responsive website providing information about dog care, food, and health guidance. Features an engaging UI with smooth navigation and rich content presentation.",
     technologies: ["HTML", "CSS", "JavaScript"],
     category: "Frontend",
     featured: false,
     icon: "paw-print",
+    liveLink: "https://puppy-care.faiza-parveen.dev",
   },
   {
-    title: "Kids Learning Platform",
+    title: "Picnic Games",
     description:
       "Built an interactive web-based games platform for kids with engaging UI and smooth user experience. Includes multiple mini-games with score tracking and animations.",
     technologies: ["HTML", "CSS", "JavaScript"],
     category: "Frontend",
     featured: false,
     icon: "gamepad",
+    liveLink: "https://picnic-games.faiza-parveen.dev",
   },
 ];
 
 export const education = [
   {
     degree: "Master's in Computer Science (MCS)",
-    institution: "University of Karachi Department of Computer Science (UBIT)",
+    institution: "University of Karachi — Department of Computer Science (UBIT)",
     year: "2023",
     score: "CGPA: 3.38",
   },
   {
     degree: "Bachelors in Mathematics",
-    institution: "University of Karachi Department of Mathematics",
+    institution: "University of Karachi — Department of Mathematics",
     year: "2020",
     score: "First Division",
   },
@@ -234,10 +245,10 @@ export const certificates = [
   {
     title: "MERN Stack Development",
     issuer: "SMIT",
-    year: "2023 2024",
+    year: "2023 — 2024",
   },
   {
-    title: "Final Project SMIT Admission Portal",
+    title: "Final Project — SMIT Admission Portal",
     issuer: "SMIT",
     year: "",
   },

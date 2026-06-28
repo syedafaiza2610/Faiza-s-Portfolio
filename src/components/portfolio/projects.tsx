@@ -15,6 +15,8 @@ import {
   Dumbbell,
   BedDouble,
   ArrowUpRight,
+  ExternalLink,
+  Github,
   Star,
   Code2,
 } from "lucide-react";
@@ -36,9 +38,9 @@ const iconMap: Record<string, typeof ShoppingCart> = {
 };
 
 const categoryColor: Record<string, string> = {
-  "Full Stack": "from-fuchsia-500 to-violet-500",
-  "Web App": "from-pink-500 to-fuchsia-500",
-  Frontend: "from-amber-500 to-pink-500",
+  "Full Stack": "from-emerald-500 to-teal-500",
+  "Web App": "from-amber-500 to-emerald-500",
+  Frontend: "from-amber-500 to-amber-500",
 };
 
 export function Projects() {
@@ -70,14 +72,14 @@ export function Projects() {
 
         <p className="mt-4 max-w-2xl text-zinc-400">
           A selection of full-stack and frontend applications built across the MERN stack, ASP.NET,
-          and PHP from e-commerce platforms to library management systems.
+          and PHP — from e-commerce platforms to library management systems.
         </p>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => {
             const Icon = iconMap[p.icon] ?? FolderGit2;
             const isHovered = hovered === i;
-            const gradient = categoryColor[p.category] ?? "from-fuchsia-500 to-violet-500";
+            const gradient = categoryColor[p.category] ?? "from-emerald-500 to-teal-500";
             return (
               <motion.article
                 key={p.title}
@@ -112,7 +114,7 @@ export function Projects() {
 
                   {/* Title & category */}
                   <div className="mt-4 flex items-center gap-2 flex-wrap">
-                    <h3 className="text-lg font-bold text-white group-hover:text-fuchsia-200 transition-colors">
+                    <h3 className="text-lg font-bold text-white group-hover:text-emerald-200 transition-colors">
                       {p.title}
                     </h3>
                     <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-400 ring-1 ring-white/10">
@@ -130,7 +132,7 @@ export function Projects() {
                     {p.technologies.map((t) => (
                       <span
                         key={t}
-                        className="inline-flex items-center gap-1 rounded-md bg-fuchsia-500/5 px-2 py-1 text-[11px] font-medium text-fuchsia-200 ring-1 ring-fuchsia-500/20"
+                        className="inline-flex items-center gap-1 rounded-md bg-emerald-500/5 px-2 py-1 text-[11px] font-medium text-emerald-200 ring-1 ring-emerald-500/20"
                       >
                         <Code2 className="h-2.5 w-2.5" />
                         {t}
@@ -139,21 +141,28 @@ export function Projects() {
                   </div>
 
                   {/* Footer link */}
-                  <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between">
-                    <span className="text-xs text-zinc-500">Personal Project</span>
+                  <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between gap-2">
+                    <a
+                      href={p.liveLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-primary inline-flex items-center gap-1.5 px-3 py-1.5 text-xs"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                      Live Demo
+                    </a>
                     <a
                       href="https://github.com/syedafaiza2610"
                       target="_blank"
                       rel="noreferrer"
-                      className={`inline-flex items-center gap-1 text-xs font-semibold transition-all ${
-                        isHovered
-                          ? "text-fuchsia-300"
-                          : "text-zinc-400"
+                      className={`btn-ghost inline-flex items-center gap-1 px-2 py-1.5 text-xs ${
+                        isHovered ? "text-amber-300" : ""
                       }`}
                     >
+                      <Github className="h-3.5 w-3.5" />
                       View Code
                       <ArrowUpRight
-                        className={`h-3.5 w-3.5 transition-transform ${
+                        className={`h-3 w-3 transition-transform ${
                           isHovered ? "translate-x-0.5 -translate-y-0.5" : ""
                         }`}
                       />

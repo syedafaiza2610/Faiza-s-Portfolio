@@ -40,8 +40,8 @@ export function Education() {
           {/* Education column */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="inline-grid h-9 w-9 place-items-center rounded-lg bg-fuchsia-500/10 ring-1 ring-fuchsia-500/30">
-                <GraduationCap className="h-4 w-4 text-fuchsia-300" />
+              <div className="inline-grid h-9 w-9 place-items-center rounded-lg bg-emerald-500/10 ring-1 ring-emerald-500/30">
+                <GraduationCap className="h-4 w-4 text-emerald-300" />
               </div>
               <h3 className="text-xl font-semibold text-white">Education</h3>
             </div>
@@ -62,11 +62,11 @@ export function Education() {
                       <p className="mt-1 text-sm text-zinc-400">{e.institution}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <div className="inline-flex items-center gap-1 text-xs text-fuchsia-300">
+                      <div className="inline-flex items-center gap-1 text-xs text-emerald-300">
                         <Calendar className="h-3 w-3" />
                         {e.year}
                       </div>
-                      <div className="mt-1 text-xs font-medium text-violet-200">{e.score}</div>
+                      <div className="mt-1 text-xs font-medium text-teal-200">{e.score}</div>
                     </div>
                   </div>
                 </motion.div>
@@ -77,8 +77,8 @@ export function Education() {
           {/* Certificates & Accomplishments column */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <div className="inline-grid h-9 w-9 place-items-center rounded-lg bg-violet-500/10 ring-1 ring-violet-500/30">
-                <Award className="h-4 w-4 text-violet-300" />
+              <div className="inline-grid h-9 w-9 place-items-center rounded-lg bg-teal-500/10 ring-1 ring-teal-500/30">
+                <Award className="h-4 w-4 text-teal-300" />
               </div>
               <h3 className="text-xl font-semibold text-white">Certificates</h3>
             </div>
@@ -93,7 +93,7 @@ export function Education() {
                   transition={{ duration: 0.5, delay: i * 0.08 }}
                   className="glass rounded-xl p-4 flex items-start gap-3 card-lift"
                 >
-                  <BadgeCheck className="h-5 w-5 shrink-0 text-fuchsia-300 mt-0.5" />
+                  <BadgeCheck className="h-5 w-5 shrink-0 text-emerald-300 mt-0.5" />
                   <div className="flex-1">
                     <h4 className="text-sm font-semibold text-white">{c.title}</h4>
                     <p className="text-xs text-zinc-400 mt-0.5">
@@ -121,7 +121,7 @@ export function Education() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="relative overflow-hidden rounded-xl p-5 border border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-fuchsia-500/5"
+                  className="relative overflow-hidden rounded-xl p-5 border border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-emerald-500/5"
                 >
                   <div className="absolute -right-4 -top-4 h-20 w-20 rounded-full bg-amber-500/10 blur-xl" />
                   <div className="relative flex items-start gap-3">

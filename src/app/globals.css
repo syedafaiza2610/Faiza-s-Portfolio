@@ -95,6 +95,135 @@
   --sidebar-accent-foreground: #e8f5f0;
   --sidebar-border: rgba(16, 185, 129, 0.15);
   --sidebar-ring: #10b981;
+
+  /* ============================================================
+     HANDCRAFTED BUTTON SYSTEM — "Warm Bronze & Forest"
+     Premium, editorial-grade. Avoids AI clichés.
+     ============================================================ */
+  --btn-bronze: #b45309;            /* warm bronze primary */
+  --btn-bronze-deep: #92400e;       /* hover */
+  --btn-bronze-pressed: #78350f;    /* active */
+  --btn-bronze-glow: rgba(180, 83, 9, 0.25);
+  --btn-cream: #faf6ef;             /* cream text on bronze */
+  --btn-cream-muted: rgba(250, 246, 239, 0.12);
+
+  --btn-forest: #064e3b;            /* deep forest secondary */
+  --btn-forest-hover: #022c22;
+  --btn-forest-border: rgba(167, 243, 208, 0.18);
+
+  --btn-linen-bg: rgba(250, 246, 239, 0.06);
+  --btn-linen-border: rgba(250, 246, 239, 0.14);
+  --btn-linen-hover: rgba(250, 246, 239, 0.10);
+
+  --btn-stone-disabled: rgba(250, 246, 239, 0.35);
+  --btn-stone-bg: rgba(250, 246, 239, 0.05);
+
+  --btn-easing: cubic-bezier(0.32, 0.72, 0.18, 1);
+  --btn-duration: 220ms;
+}
+
+/* ============================================================
+   Button base classes — handcrafted, consistent, accessible
+   ============================================================ */
+.btn-primary {
+  background: linear-gradient(180deg, var(--btn-bronze) 0%, var(--btn-bronze-deep) 100%);
+  color: var(--btn-cream);
+  border: 1px solid rgba(250, 246, 239, 0.18);
+  border-radius: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow:
+    0 1px 0 rgba(250, 246, 239, 0.15) inset,
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 8px 24px -12px var(--btn-bronze-glow);
+  transition: background var(--btn-duration) var(--btn-easing),
+              box-shadow var(--btn-duration) var(--btn-easing),
+              transform var(--btn-duration) var(--btn-easing),
+              border-color var(--btn-duration) var(--btn-easing);
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, var(--btn-bronze-deep) 0%, var(--btn-bronze-pressed) 100%);
+  border-color: rgba(250, 246, 239, 0.28);
+  box-shadow:
+    0 1px 0 rgba(250, 246, 239, 0.2) inset,
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 12px 32px -10px var(--btn-bronze-glow);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  background: var(--btn-bronze-pressed);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+  transform: translateY(0);
+}
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  background: var(--btn-stone-bg);
+  color: var(--btn-stone-disabled);
+  border-color: var(--btn-linen-border);
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary — linen/cream glass on dark */
+.btn-secondary {
+  background: var(--btn-linen-bg);
+  color: var(--btn-cream);
+  border: 1px solid var(--btn-linen-border);
+  border-radius: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(250, 246, 239, 0.06) inset;
+  transition: background var(--btn-duration) var(--btn-easing),
+              border-color var(--btn-duration) var(--btn-easing),
+              transform var(--btn-duration) var(--btn-easing);
+}
+.btn-secondary:hover {
+  background: var(--btn-linen-hover);
+  border-color: rgba(250, 246, 239, 0.26);
+  transform: translateY(-1px);
+}
+.btn-secondary:active {
+  background: rgba(250, 246, 239, 0.04);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;
+}
+.btn-secondary:disabled {
+  color: var(--btn-stone-disabled);
+  border-color: rgba(250, 246, 239, 0.06);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Tertiary — ghost/underline text button */
+.btn-ghost {
+  background: transparent;
+  color: rgba(250, 246, 239, 0.78);
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: color var(--btn-duration) var(--btn-easing),
+              background var(--btn-duration) var(--btn-easing);
+}
+.btn-ghost:hover {
+  color: var(--btn-cream);
+  background: rgba(250, 246, 239, 0.05);
+}
+.btn-ghost:active {
+  background: rgba(250, 246, 239, 0.08);
+  color: var(--btn-cream);
+}
+
+/* Focus ring — accessible, refined */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--btn-bronze);
+  outline-offset: 2px;
 }
 
 @layer base {
@@ -276,6 +405,11 @@
   /* Soft fade so the scene melts into the page edges instead of ending hard */
   -webkit-mask-image: radial-gradient(ellipse 70% 80% at 75% 50%, #000 35%, transparent 80%);
   mask-image: radial-gradient(ellipse 70% 80% at 75% 50%, #000 35%, transparent 80%);
+}
+/* Force the canvas element itself to never capture touch/click events */
+.hero-scene-wrap canvas {
+  pointer-events: none !important;
+  touch-action: pan-y pan-x;
 }
 @media (min-width: 1024px) {
   .hero-scene-wrap {

@@ -95,7 +95,6 @@ export function Footer() {
           <p className="text-xs text-zinc-500 inline-flex items-center gap-1.5">
             © {new Date().getFullYear()} {personalInfo.name}. Built with
             <Heart className="h-3 w-3 fill-emerald-400 text-emerald-400" />
-            using Next.js, React Three Fiber & Framer Motion.
           </p>
           <a
             href="#home"

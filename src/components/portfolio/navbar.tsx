@@ -33,7 +33,7 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 inset-x-0 z-[80] transition-all duration-500 ${
         scrolled ? "py-3" : "py-5"
       }`}
     >
@@ -118,15 +118,15 @@ export function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="md:hidden mt-2 overflow-hidden"
+              className="md:hidden mt-2 overflow-hidden relative z-[70]"
             >
               <div className="glass-strong rounded-2xl p-3 flex flex-col gap-1">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={() => setOpen(false)}
-                    className={`rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                    onClick={() => setTimeout(() => setOpen(false), 150)}
+                    className={`rounded-lg px-4 py-3 text-sm font-medium transition-colors ${
                       active === item.href
                         ? "bg-emerald-500/15 text-white"
                         : "text-zinc-300 hover:bg-white/5"
@@ -138,14 +138,14 @@ export function Navbar() {
                 <a
                   href="/Faiza-Parveen-Resume.pdf"
                   download="Faiza-Parveen-Resume.pdf"
-                  onClick={() => setOpen(false)}
-                  className="btn-primary inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm"
+                  onClick={() => setTimeout(() => setOpen(false), 150)}
+                  className="btn-primary inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm mt-1"
                 >
                   <Download className="h-3.5 w-3.5" /> Download Resume
                 </a>
                 <a
                   href="#contact"
-                  onClick={() => setOpen(false)}
+                  onClick={() => setTimeout(() => setOpen(false), 150)}
                   className="btn-secondary inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm"
                 >
                   <Sparkles className="h-3.5 w-3.5 text-amber-400" /> Hire Me

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Cpu, Layers, Palette, Server, Database, Cloud, Wrench, Sparkles } from "lucide-react";
 import { technicalSkills, softSkills } from "@/lib/portfolio-data";
 
@@ -21,6 +22,66 @@ const categoryMeta: Record<
 
 // Marquee strip — duplicate list for seamless loop
 const marqueeSkills = [...technicalSkills, ...technicalSkills];
+
+/* Robust skill bar — uses native IntersectionObserver (works on mobile) */
+function SkillBar({ level }: { level: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(`${level}%`); // show full width as fallback
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let triggered = false;
+    const startAnim = () => {
+      if (triggered) return;
+      triggered = true;
+      setWidth("0%");
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setWidth(`${level}%`));
+      });
+    };
+
+    if (typeof IntersectionObserver !== "undefined") {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startAnim();
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -30px 0px" }
+      );
+      observer.observe(el);
+
+      const fallback = setTimeout(() => {
+        if (!triggered) setWidth(`${level}%`);
+      }, 2500);
+
+      return () => {
+        observer.disconnect();
+        clearTimeout(fallback);
+      };
+    } else {
+      setWidth(`${level}%`);
+    }
+  }, [level]);
+
+  return (
+    <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+      <div
+        ref={ref}
+        style={{
+          width,
+          transition: "width 1s cubic-bezier(0.32, 0.72, 0.18, 1)",
+        }}
+        className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-amber-500 to-teal-500"
+      />
+    </div>
+  );
+}
 
 export function Skills() {
   const categories = Array.from(new Set(technicalSkills.map((s) => s.category)));
@@ -96,15 +157,7 @@ export function Skills() {
                         <span className="text-zinc-300">{s.name}</span>
                         <span className="text-zinc-500">{s.level}%</span>
                       </div>
-                      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${s.level}%` }}
-                          viewport={{ once: true, margin: "-50px" }}
-                          transition={{ duration: 1, ease: "easeOut" }}
-                          className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-amber-500 to-teal-500"
-                        />
-                      </div>
+                      <SkillBar level={s.level} />
                     </div>
                   ))}
                 </div>

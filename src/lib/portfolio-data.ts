@@ -204,7 +204,7 @@ icon: "graduation-cap",
     liveLink: "https://puppy-care.faiza-parveen.dev",
   },
   {
-    title: "Picnic Games",
+    title: "Puppy Website",
     description:
       "Built an interactive web-based games platform for kids with engaging UI and smooth user experience. Includes multiple mini-games with score tracking and animations.",
     technologies: ["HTML", "CSS", "JavaScript"],

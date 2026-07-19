@@ -48,7 +48,7 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
           >
-            Hi, I&apos;m <span className="text-gradient">Faiza Parveen</span>
+            Hi, I&apos;m <span className="text-gradient">Faiza</span>
             <br />
             <span className="text-3xl sm:text-4xl lg:text-5xl text-zinc-200 font-semibold">
               I build scalable

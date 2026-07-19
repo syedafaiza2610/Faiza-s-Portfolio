@@ -83,7 +83,7 @@ export function Navbar() {
               </div>
               <div className="hidden sm:flex flex-col leading-tight">
                 <span className="text-sm font-semibold tracking-tight text-white">
-                  Faiza <span className="text-emerald-300">Parveen</span>
+                  Faiza <span className="text-emerald-300"></span>
                 </span>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-amber-300/80">
                   Full Stack Developer
